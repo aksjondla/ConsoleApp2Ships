@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIMovment.cs" />
+    <Compile Include="Angle.cs" />
     <Compile Include="Field\CreateField.cs" />
     <Compile Include="Field\FIeld.cs" />
     <Compile Include="Field\ICreateField.cs" />
@@ -50,12 +52,19 @@
     <Compile Include="Field\IShow.cs" />
     <Compile Include="Field\ShowField.cs" />
     <Compile Include="movment\IMovable.cs" />
+    <Compile Include="movment\IRotable.cs" />
     <Compile Include="movment\Move.cs" />
+    <Compile Include="movment\Position.cs" />
+    <Compile Include="movment\Rotable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\IServer.cs" />
     <Compile Include="Server\Server.cs" />
     <Compile Include="Ship.cs" />
+    <Compile Include="ShowObject.cs" />
+    <Compile Include="Uobject\IUObject.cs" />
+    <Compile Include="Uobject\MovableAdapter.cs" />
+    <Compile Include="Velocity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

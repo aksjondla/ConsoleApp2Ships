@@ -12,12 +12,31 @@ namespace ConsoleApp2Ships
     {
         public int PositionX { get; set; }
         public int PositionY { get; set; }
-        public int Velocity { get; set; }
-        public Ship(int _positionX, int _positionY, int _velocity)
+        public int Velocity_ { get; }
+
+        public int PositionAngle_ {  get; set; }
+        public Ship(Position position)
         {
-            PositionX = _positionX;
-            PositionY = _positionY;
-            Velocity = _velocity;
+            PositionX = position.PositionX;
+            PositionY = position.PositionY;
+            PositionAngle_ = position.PositionAngle;
+        }
+
+        public Position GetPosition()
+        {
+            return new Position(PositionX, PositionY, PositionAngle_);
+        }
+
+        public void SetPosition(Position NewValue)
+        {
+            PositionX = NewValue.PositionX;
+            PositionY = NewValue.PositionY;
+            PositionAngle_ = NewValue.PositionAngle;
+        }
+
+        public int GetVelocity()
+        {
+            return Velocity.GetValueShip();
         }
     }
 }

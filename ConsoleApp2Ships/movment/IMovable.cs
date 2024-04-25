@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 namespace ConsoleApp2Ships.movment
 {
     interface IMovable
-    {   
-        int PositionX { get; set; }
-        int PositionY { get; set; }
-        int Velocity { get; set; }
+    {
+        Position GetPosition();
+        void SetPosition(Position NewValue);
+        int GetVelocity();
+
+        //int PositionX { get; set; }
+        //int PositionY { get; set; }
+        //int Velocity { get; }
     }
 }

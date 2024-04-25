@@ -14,7 +14,7 @@ namespace ConsoleApp2Ships
     {
         static void Main(string[] args)
         {
-            var server = new Server.Server(new Field.Field(10, 100));
+            var server = new Server.Server(new Field.Field(10, 50));
             server.ServerRun();
         }
     }
