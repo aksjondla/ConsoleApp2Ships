@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2Ships.movment
 {
-    internal class Rotable
+    class Rotable
     {
+        public IMovable obj;
+
+        public Rotable (IMovable obj)
+        {
+            this.obj = obj;
+        }
+
+        public void Auto()
+        {
+            var o = obj.GetPosition();
+        }
     }
 }

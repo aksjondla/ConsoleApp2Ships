@@ -24,23 +24,7 @@ namespace ConsoleApp2Ships
             foreach (var item in obj)
             {
                 var p = item.GetPosition();
-
-                if ((p.PositionY == FieldSourse.Width) || (p.PositionY > (FieldSourse.Width - 1)))
-                {
-                    p.PositionY = p.PositionY - 1;
-                }
-                if (p.PositionY < 0)
-                {
-                    p.PositionY = p.PositionY + 1;
-                }
-                if ((p.PositionX == FieldSourse.Height) || (p.PositionX > FieldSourse.Height))
-                {
-                    p.PositionX = p.PositionX - 1;
-                }
-                if (p.PositionX < 0)
-                {
-                    p.PositionX = p.PositionX + 1;
-                }
+                
                 FieldSourse.SpecificField_[p.PositionY, p.PositionX] = '.';
             }
         }

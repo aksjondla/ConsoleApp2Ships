@@ -16,6 +16,7 @@ namespace ConsoleApp2Ships
         {
             var server = new Server.Server(new Field.Field(10, 50));
             server.ServerRun();
+            //IDisposable 
         }
     }
 }
