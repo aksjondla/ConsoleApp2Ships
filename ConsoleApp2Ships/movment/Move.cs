@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2Ships.movment
 {
-    class Move
+    class Move : ICommand
     {
         private IMovable movable;
         public Move(IMovable _movable)
@@ -14,7 +14,7 @@ namespace ConsoleApp2Ships.movment
             movable = _movable;
         }
 
-        public void move()
+        public void Execute()
         {
             Position p = movable.GetPosition();
             switch (p.PositionAngle)

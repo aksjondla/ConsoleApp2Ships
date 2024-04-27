@@ -1,29 +1,33 @@
-﻿using ConsoleApp2Ships.Field;
+﻿/*using ConsoleApp2Ships.Field;
 using ConsoleApp2Ships.movment;
+using ConsoleApp2Ships.Observer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp2Ships
 {
-    class AIMovment
+    class AIMovment : IObserver
     {
         public List<IMovable> movables;
         public IField FieldServer;
 
         public AIMovment(List<IMovable> movables, IField _FieldServer)
         {
-            this.movables = movables;;
+            this.movables = movables;
             FieldServer = _FieldServer;
         }
 
-        public void AIComand()
+        public void OnChanget()
+        {
+            this.AIComand();
+        }
+
+        private void AIComand()
         {
             foreach (var item in movables)
             {
                 Position p = item.GetPosition();
+
                 int newY, newX;
                 Random rnd = new Random();
 
@@ -73,17 +77,24 @@ namespace ConsoleApp2Ships
                     }
                 }
 
-                // Если не нашли валидную позицию, оставляем объект на месте или обрабатываем иначе
+*//*                // Если не нашли валидную позицию, оставляем объект на месте или обрабатываем иначе
                 if (!positionIsValid)
                 {
-                    Console.WriteLine("Не удалось найти валидную позицию для объекта");
+                    //Console.WriteLine("Не удалось найти валидную позицию для объекта");
                     // Здесь можно выбрать, что делать дальше: оставить объект на месте или обработать по-другому
                 }
-                var move = new Move(item);
+
+                //var rotate = new Rotable(item);
+                //rotate.Execute();
+
+                //var move = new Move(item);
                 if ((p.PositionY - 1) >= 0 && (p.PositionX + 1) < FieldServer.SpecificField_.GetLength(1) && (p.PositionY - 1) >= 0 && (p.PositionY + 1) < FieldServer.SpecificField_.GetLength(0))
-                    move.move();
+                {
+                    //move.Execute();
+                }*//*
             }
 
         }
     }
 }
+*/

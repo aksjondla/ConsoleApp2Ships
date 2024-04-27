@@ -1,5 +1,6 @@
 ﻿using ConsoleApp2Ships.Field;
 using ConsoleApp2Ships.movment;
+using ConsoleApp2Ships.Observer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2Ships
 {
-    class ShowObject
+    class ShowObject : IObserver
     {
         public List<IMovable> obj;
         public IField FieldSourse;
@@ -19,7 +20,11 @@ namespace ConsoleApp2Ships
             FieldSourse = fieldSourse;
         }
 
-        public void ShowObj()
+        public void OnChanget()
+        {
+            this.ShowObj();
+        }
+        private void ShowObj()
         {
             foreach (var item in obj)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp2Ships.Observer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2Ships.Field
 {
-    class ShowField : IShow
+    class ShowField : IShow, ISubject
     {
+        private List<IObserver> _observers = new List<IObserver>();
         public IField SpecificField {  get; set; }
         public ShowField(IField _field)
         {
@@ -23,6 +25,24 @@ namespace ConsoleApp2Ships.Field
                     Console.Write(SpecificField.SpecificField_[i, j]);
                 }
                 Console.WriteLine();
+            }
+        }
+
+        public void Attached(IObserver observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void Detach(IObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public void Notify()
+        {
+            foreach (var observer in _observers)
+            {
+                observer.OnChanget();
             }
         }
     }

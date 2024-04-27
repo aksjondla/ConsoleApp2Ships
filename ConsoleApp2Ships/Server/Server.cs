@@ -23,23 +23,30 @@ namespace ConsoleApp2Ships.Server
         {
             
             var create = new CreateField(FieldServer);
-            var show = new ShowField(FieldServer);
+            var UpdateUi = new ShowField(FieldServer);
             var ship = new Ship(new Position(0, 0, 0));
             var ship1 = new Ship(new Position(0, 0, 1));
             var listobj = new List<IMovable>() { ship, ship1 };
             var showobj = new ShowObject(listobj , FieldServer);
-            var Ai = new AIMovment(listobj, FieldServer);
+            //var Ai = new AIMovment(listobj, FieldServer);
+            var rotate = new Rotable(listobj, FieldServer);
+
+            UpdateUi.Attached(showobj);
+            UpdateUi.Attached(rotate);
 
             while (true)
             {
                 Console.Clear();
+                
                 create.Create();
-                Ai.AIComand();
+                //Ai.AIComand();
 
-                showobj = new ShowObject(listobj, FieldServer);
-                showobj.ShowObj();
+                //showobj = new ShowObject(listobj, FieldServer);
+                UpdateUi.Notify();
 
-                show.Show();
+                //showobj.ShowObj();
+
+                UpdateUi.Show();
                 Thread.Sleep(1);
             }
         }
